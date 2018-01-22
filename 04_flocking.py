@@ -99,10 +99,9 @@ vector near_p, to_near_vec, to_near_dir;
 vector accum = {0,0,0};
 float  range = max_dist - min_dist;
 
-int handle = pcopen(0, "P", @P, max_radius, max_neighbors+1);
+int handle = pcopen(0, "P", @P, max_radius, max_neighbors + 1);
 
 while(pciterate(handle)) {
-
     pcimport(handle, "point.number", near_ptnum);
     if (near_ptnum == @ptnum)
         continue; // skip ourselves, we're in the point cloud!
